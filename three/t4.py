@@ -7,11 +7,10 @@ from keras.callbacks import TensorBoard
 import numpy
 
 
-def data():
-    # 测试数据
-    dataset = numpy.loadtxt("t3s.csv", delimiter=",")
-    X = dataset[:, 0:1]
-    Y = dataset[:, 1]
+# 测试数据
+dataset = numpy.loadtxt("t3s.csv", delimiter=",")
+X = dataset[:, 0:1]
+Y = dataset[:, 1]
 
 
 RET = []
@@ -48,8 +47,7 @@ def run(oneSize, twoSize):
     RET.append([oneSize, twoSize, scores[1]*100])
 
 
-data()
 for i in range(1, 10):
     for f in range(1, 10):
         run(i, f)
-print RET
+print(RET)
